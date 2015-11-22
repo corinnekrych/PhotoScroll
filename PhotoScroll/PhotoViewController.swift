@@ -15,5 +15,16 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         imageView.image = UIImage(named: photoName)
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 3.0
+        scrollView.zoomScale = 1.0
     }
 }
+
+// MARK: - UIScrollViewDelegate
+extension PhotoViewController: UIScrollViewDelegate {
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+}
+
