@@ -40,11 +40,14 @@ class PhotoViewController: UIViewController {
     func recenterImage() {
         let scrollViewSize = scrollView.bounds.size
         let imageSize = imageView.frame.size
-        
+        var tabSize: CGFloat = 0
+        if let navigationController = navigationController {
+            tabSize = CGRectGetHeight(navigationController.navigationBar.frame)
+        }
         let horizontalSpace = imageSize.width < scrollViewSize.width ?
             (scrollViewSize.width - imageSize.width) / 2 : 0
         let verticalSpace = imageSize.height < scrollViewSize.height ?
-            (scrollViewSize.height - CGRectGetHeight(navigationController!.navigationBar.frame) - imageSize.height) / 2 : 0
+            (scrollViewSize.height - tabSize - imageSize.height) / 2 : 0
         
         scrollView.contentInset = UIEdgeInsets(top: verticalSpace,
             left: horizontalSpace,

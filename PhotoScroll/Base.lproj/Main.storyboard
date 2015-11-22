@@ -46,7 +46,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="1Xv-RL-hti" id="2ul-H5-n5T"/>
-                                    <segue destination="Tou-yP-mjQ" kind="show" id="FK6-9t-Xww"/>
+                                    <segue destination="Tou-yP-mjQ" kind="show" identifier="viewPhoto:" id="FK6-9t-Xww"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
