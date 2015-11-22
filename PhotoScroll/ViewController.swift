@@ -23,7 +23,14 @@ class ViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? UICollectionViewCell, indexPath = collectionView!.indexPathForCell(cell) {
 
+            let theDestination = (segue.destinationViewController as! PhotoViewController)
+            theDestination.photoName = photos[indexPath.row]
+        }
+    }
 
 }
 
@@ -43,8 +50,6 @@ extension ViewController {
         cell.backgroundColor = UIColor.blackColor()
 
         let thumbnail = showThumbnail(UIImage(named:photos[indexPath.row])!, thumnailSize: thumnailSize)
-        cell.backgroundColor = UIColor.blackColor()
-
         cell.imageView.image = thumbnail
         return cell
     }

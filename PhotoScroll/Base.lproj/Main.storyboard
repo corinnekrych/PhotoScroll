@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IYL-XP-JUV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photo Scroll-->
         <scene sceneID="HLg-nF-QcR">
             <objects>
                 <collectionViewController id="Dz9-ob-7Jl" customClass="ViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,6 +46,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="1Xv-RL-hti" id="2ul-H5-n5T"/>
+                                    <segue destination="Tou-yP-mjQ" kind="show" id="FK6-9t-Xww"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -53,11 +55,62 @@
                             <outlet property="delegate" destination="Dz9-ob-7Jl" id="sJK-AT-v3f"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="9o7-pK-quI"/>
+                    <navigationItem key="navigationItem" title="Photo Scroll" id="9o7-pK-quI"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG6-cz-zOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="485"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="BWF-Mm-sV7">
+            <objects>
+                <viewController id="Tou-yP-mjQ" customClass="PhotoViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ySi-Sp-ZBB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tte-qg-mzd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dBF-SA-UXb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-fR-fHB">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ve5-7J-0me">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="600" placeholder="YES" id="QpO-3g-vkN"/>
+                                            <constraint firstAttribute="height" constant="556" placeholder="YES" id="t84-sB-0Ff"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ve5-7J-0me" secondAttribute="bottom" id="GrA-0X-XcY"/>
+                                    <constraint firstItem="Ve5-7J-0me" firstAttribute="leading" secondItem="aL7-fR-fHB" secondAttribute="leading" id="hUk-We-OuZ"/>
+                                    <constraint firstItem="Ve5-7J-0me" firstAttribute="top" secondItem="aL7-fR-fHB" secondAttribute="top" id="hvz-d1-qWD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ve5-7J-0me" secondAttribute="trailing" id="nd8-sg-0NK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aL7-fR-fHB" secondAttribute="trailing" constant="-20" id="ICB-Dl-d71"/>
+                            <constraint firstItem="aL7-fR-fHB" firstAttribute="top" secondItem="ySi-Sp-ZBB" secondAttribute="bottom" constant="-20" id="PNB-5X-9CK"/>
+                            <constraint firstItem="Tte-qg-mzd" firstAttribute="top" secondItem="aL7-fR-fHB" secondAttribute="bottom" id="TSz-r8-UzM"/>
+                            <constraint firstItem="aL7-fR-fHB" firstAttribute="leading" secondItem="dBF-SA-UXb" secondAttribute="leadingMargin" constant="-20" id="ww7-fg-b3a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Ve5-7J-0me" id="iCm-X3-KJI"/>
+                        <outlet property="scrollView" destination="aL7-fR-fHB" id="IHH-er-xRJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSI-tT-12r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="1288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uzF-pX-Zex">
