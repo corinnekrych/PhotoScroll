@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UICollectionViewController {
     private let reuseIdentifier = "PhotoCell"
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let thumnailSize:CGFloat = 75.0
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 10.0, bottom: 50.0, right: 10.0)
     private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
 
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class ViewController: UICollectionViewController {
 extension ViewController {
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return photos.count
+        return 1
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,9 +39,13 @@ extension ViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) 
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCell
         cell.backgroundColor = UIColor.blackColor()
-        // Configure the cell
+
+        let thumbnail = showThumbnail(UIImage(named:photos[indexPath.row])!, thumnailSize: thumnailSize)
+        cell.backgroundColor = UIColor.blackColor()
+
+        cell.imageView.image = thumbnail
         return cell
     }
 }
@@ -49,10 +54,21 @@ extension ViewController {
 extension ViewController : UICollectionViewDelegateFlowLayout {
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: thumnailSize, height: thumnailSize)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
             return sectionInsets
     }
+
+}
+
+func showThumbnail(image: UIImage, thumnailSize: CGFloat)-> UIImage {
+    UIGraphicsBeginImageContext(CGSize(width: thumnailSize, height: thumnailSize))
+    let rect = CGRectMake(0.0, 0.0, thumnailSize, thumnailSize)
+    UIGraphicsBeginImageContext(rect.size)
+    image.drawInRect(rect)
+    let thumbnail = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext()
+    return thumbnail
 }
