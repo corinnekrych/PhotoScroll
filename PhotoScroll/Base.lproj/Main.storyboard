@@ -64,7 +64,7 @@
         <!--Photo View Controller-->
         <scene sceneID="BWF-Mm-sV7">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tou-yP-mjQ" customClass="PhotoViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tou-yP-mjQ" customClass="PhotoViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ySi-Sp-ZBB"/>
                         <viewControllerLayoutGuide type="bottom" id="Tte-qg-mzd"/>
