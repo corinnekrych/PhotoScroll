@@ -77,7 +77,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="348" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0E-Gr-7b5" userLabel="ContainerView">
-                                        <rect key="frame" x="4" y="0.0" width="340" height="821"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="821"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-R1-GJY">
                                                 <rect key="frame" x="0.0" y="400" width="340" height="200"/>
@@ -113,21 +113,9 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="d0E-Gr-7b5" secondAttribute="trailing" id="J04-fS-dxT"/>
                                     <constraint firstAttribute="bottom" secondItem="d0E-Gr-7b5" secondAttribute="bottom" id="XKs-dw-6Xd"/>
-                                    <constraint firstItem="d0E-Gr-7b5" firstAttribute="leading" secondItem="yqb-0T-teI" secondAttribute="leading" constant="4" id="a75-Ls-SOF"/>
+                                    <constraint firstItem="d0E-Gr-7b5" firstAttribute="leading" secondItem="yqb-0T-teI" secondAttribute="leading" id="a75-Ls-SOF"/>
                                     <constraint firstItem="d0E-Gr-7b5" firstAttribute="top" secondItem="yqb-0T-teI" secondAttribute="top" id="gas-Kl-Wv5"/>
-                                    <constraint firstItem="d0E-Gr-7b5" firstAttribute="leading" secondItem="yqb-0T-teI" secondAttribute="leading" id="n9e-bH-WWV"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="n9e-bH-WWV"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="a75-Ls-SOF"/>
-                                        <include reference="n9e-bH-WWV"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <animations/>
