@@ -64,7 +64,6 @@
         <!--View Controller-->
         <scene sceneID="upX-B7-cmx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-hI-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WDA-aQ-J5d" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca4-1e-Q5Y"/>
@@ -112,11 +111,23 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="d0E-Gr-7b5" secondAttribute="trailing" constant="4" id="J04-fS-dxT"/>
+                                    <constraint firstAttribute="trailing" secondItem="d0E-Gr-7b5" secondAttribute="trailing" id="J04-fS-dxT"/>
                                     <constraint firstAttribute="bottom" secondItem="d0E-Gr-7b5" secondAttribute="bottom" id="XKs-dw-6Xd"/>
                                     <constraint firstItem="d0E-Gr-7b5" firstAttribute="leading" secondItem="yqb-0T-teI" secondAttribute="leading" constant="4" id="a75-Ls-SOF"/>
                                     <constraint firstItem="d0E-Gr-7b5" firstAttribute="top" secondItem="yqb-0T-teI" secondAttribute="top" id="gas-Kl-Wv5"/>
+                                    <constraint firstItem="d0E-Gr-7b5" firstAttribute="leading" secondItem="yqb-0T-teI" secondAttribute="leading" id="n9e-bH-WWV"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="n9e-bH-WWV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="a75-Ls-SOF"/>
+                                        <include reference="n9e-bH-WWV"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <animations/>
@@ -132,6 +143,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="340" height="800"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-hI-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="869" y="1552"/>
         </scene>
