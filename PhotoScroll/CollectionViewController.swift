@@ -21,16 +21,7 @@ class CollectionViewController: UICollectionViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UICollectionViewCell, indexPath = collectionView!.indexPathForCell(cell) {
-      let theDestination = (segue.destinationViewController as! ManagePageViewController)
-      
-      theDestination.photos = photos
-      theDestination.currentIndex = indexPath.row
-    }
-  }
-  
+    
 }
 
 // MARK: UICollectionViewDataSource
