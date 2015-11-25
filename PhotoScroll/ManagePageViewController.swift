@@ -14,18 +14,18 @@ class ManagePageViewController: UIViewController, UIPageViewControllerDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Create data model images
         
         // Get pages
         pageController = storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageController.dataSource = self
+        // make page color transparent
+        self.pageController.view.backgroundColor = UIColor.clearColor()
         
         let startingViewController:PhotoCommentViewController = self.viewPhotoCommentController(0)
         let viewControllers = [startingViewController]
         self.pageController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
-        
-        // Change the size of page view controller
-        self.pageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
         self.addChildViewController(pageController)
         self.view.addSubview(pageController.view)
@@ -66,10 +66,13 @@ class ManagePageViewController: UIViewController, UIPageViewControllerDataSource
         return self.viewPhotoCommentController(index)
     }
     
-/*
+
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return photos.count
     }
+    
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
     }
-*/
+
 }
