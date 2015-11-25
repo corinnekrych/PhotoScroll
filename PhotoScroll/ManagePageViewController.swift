@@ -9,71 +9,67 @@
 import UIKit
 
 class ManagePageViewController: UIViewController, UIPageViewControllerDataSource {
-    @IBOutlet weak var pageController: UIPageViewController!
-    var photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
-    var currentIndex: Int!
+  @IBOutlet weak var pageController: UIPageViewController!
+  var photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
+  var currentIndex: Int!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Create data model images
-        
-        // Get pages
-        pageController = storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
-        pageController.dataSource = self
-        // make page color transparent
-        self.pageController.view.backgroundColor = UIColor.clearColor()
-        
-        let startingViewController:PhotoCommentViewController = self.viewPhotoCommentController(currentIndex ?? 0)
-        let viewControllers = [startingViewController]
-        self.pageController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
-        
-        self.addChildViewController(pageController)
-        self.view.addSubview(pageController.view)
-        self.pageController.didMoveToParentViewController(self)
+    // Get pages
+    pageController = storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+    pageController.dataSource = self
+    
+    let startingViewController:PhotoCommentViewController = self.viewPhotoCommentController(currentIndex ?? 0)
+    let viewControllers = [startingViewController]
+    self.pageController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+    
+    self.addChildViewController(pageController)
+    self.view.addSubview(pageController.view)
+    self.pageController.didMoveToParentViewController(self)
+  }
+  
+  func viewPhotoCommentController(index: Int) -> PhotoCommentViewController {
+    let photoCommentController = storyboard!.instantiateViewControllerWithIdentifier("PhotoCommentViewController") as! PhotoCommentViewController
+    photoCommentController.photoName = photos[index]
+    photoCommentController.photoIndex = index
+    return photoCommentController
+  }
+  
+  //MARK: implementation of UIPageViewControllerDataSource
+  func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    var index = (viewController as! PhotoCommentViewController).photoIndex
+    
+    if ((index == 0) || (index == NSNotFound))  {
+      return nil
     }
     
-    func viewPhotoCommentController(index: Int) -> PhotoCommentViewController {
-        let photoCommentController = storyboard!.instantiateViewControllerWithIdentifier("PhotoCommentViewController") as! PhotoCommentViewController
-        photoCommentController.photoName = photos[index]
-        photoCommentController.photoIndex = index
-        return photoCommentController
+    index = index - 1
+    return self.viewPhotoCommentController(index)
+    
+  }
+  
+  func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    var index = (viewController as! PhotoCommentViewController).photoIndex
+    
+    if (index == NSNotFound) {
+      return nil
     }
     
-    //MARK: implementation of UIPageViewControllerDataSource
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! PhotoCommentViewController).photoIndex
-        
-        if ((index == 0) || (index == NSNotFound))  {
-            return nil
-        }
-        
-        index = index - 1
-        return self.viewPhotoCommentController(index)
-    
+    index = index + 1
+    if (index == photos.count) {
+      return nil;
     }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! PhotoCommentViewController).photoIndex
-        
-        if (index == NSNotFound) {
-            return nil
-        }
-        
-        index = index + 1
-        if (index == photos.count) {
-           return nil;
-        }
-        return self.viewPhotoCommentController(index)
-    }
-    
-
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return photos.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return currentIndex ?? 0
-    }
-
+    return self.viewPhotoCommentController(index)
+  }
+  
+  // MARK: UIPageControl
+  func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    return photos.count
+  }
+  
+  func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    return currentIndex ?? 0
+  }
+  
 }
