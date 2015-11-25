@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WDA-aQ-J5d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DfR-Gm-8Wx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -61,10 +61,29 @@
             </objects>
             <point key="canvasLocation" x="1437" y="485"/>
         </scene>
+        <!--Manage Page View Controller-->
+        <scene sceneID="j0N-Ti-vur">
+            <objects>
+                <viewController id="DfR-Gm-8Wx" customClass="ManagePageViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Yf-Ll-OcJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="CA8-E3-oD8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AMZ-ie-l7T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAo-FE-f0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="1839"/>
+        </scene>
         <!--Photo Comment View Controller-->
         <scene sceneID="upX-B7-cmx">
             <objects>
-                <viewController id="WDA-aQ-J5d" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoCommentViewController" id="WDA-aQ-J5d" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca4-1e-Q5Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Inq-Ye-VOX"/>
@@ -161,6 +180,7 @@
                     <size key="freeformSize" width="340" height="800"/>
                     <connections>
                         <outlet property="email" destination="SZe-hf-sUf" id="qtj-ST-o5I"/>
+                        <outlet property="imageView" destination="1Re-IN-Auo" id="IVS-ES-Dqa"/>
                         <outlet property="scrollView" destination="yqb-0T-teI" id="uD1-xp-ldj"/>
                     </connections>
                 </viewController>
@@ -245,6 +265,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf2-di-D1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="625" y="485"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="orL-Nc-WZy">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="4" navigationOrientation="horizontal" spineLocation="none" id="akK-yD-ZPy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6je-sC-Zbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="1182"/>
         </scene>
     </scenes>
     <resources>

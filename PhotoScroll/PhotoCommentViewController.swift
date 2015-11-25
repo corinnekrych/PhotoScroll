@@ -8,17 +8,24 @@
 
 import UIKit
 
-class PhotoCommentViewController: UIViewController {
+public class PhotoCommentViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var email: UITextField!
+    
+    public var photoName: String!
+    public var photoIndex: Int!
     
     @IBAction func hideKeyboard(sender: AnyObject) {
         email.endEditing(true)
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
+        if (photoName != nil) {
+            self.imageView.image = UIImage(named: photoName)
+        }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
