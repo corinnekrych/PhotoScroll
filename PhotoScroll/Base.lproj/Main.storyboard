@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1437" y="485"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Comment View Controller-->
         <scene sceneID="upX-B7-cmx">
             <objects>
-                <viewController id="WDA-aQ-J5d" sceneMemberID="viewController">
+                <viewController id="WDA-aQ-J5d" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca4-1e-Q5Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Inq-Ye-VOX"/>
@@ -77,36 +77,65 @@
                                 <rect key="frame" x="-4" y="0.0" width="348" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0E-Gr-7b5" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="821"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="735"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-R1-GJY">
-                                                <rect key="frame" x="0.0" y="400" width="340" height="200"/>
+                                                <rect key="frame" x="0.0" y="314" width="340" height="200"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.84313732389999996" green="0.066666670139999995" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="backgroundColor" red="0.89694600069999997" green="0.22098291919999999" blue="0.1603457999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="o6e-bb-rAx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SJ-ba-0RT">
-                                                <rect key="frame" x="0.0" y="0.0" width="340" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="314"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo3" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-IN-Auo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="314"/>
+                                                        <animations/>
+                                                    </imageView>
+                                                </subviews>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="q6o-sU-WIS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1Re-IN-Auo" secondAttribute="bottom" id="6pw-8Y-t2h"/>
+                                                    <constraint firstItem="1Re-IN-Auo" firstAttribute="leading" secondItem="3SJ-ba-0RT" secondAttribute="leading" id="b75-QJ-ZAV"/>
+                                                    <constraint firstAttribute="height" constant="314" id="q6o-sU-WIS"/>
+                                                    <constraint firstItem="1Re-IN-Auo" firstAttribute="top" secondItem="3SJ-ba-0RT" secondAttribute="top" id="thM-vS-EuA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1Re-IN-Auo" secondAttribute="trailing" id="xbl-YL-BZI"/>
                                                 </constraints>
                                             </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-hf-sUf">
+                                                <rect key="frame" x="10" y="666" width="320" height="40"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.99607843139999996" green="0.9156355383" blue="0.53531350690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Djh-9B-LHT"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.84547155569999999" blue="0.54639489029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="3SJ-ba-0RT" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Dut-kt-SVf"/>
                                             <constraint firstAttribute="trailing" secondItem="JPZ-R1-GJY" secondAttribute="trailing" id="P2S-oP-raK"/>
+                                            <constraint firstAttribute="bottom" secondItem="SZe-hf-sUf" secondAttribute="bottom" constant="29" id="ahb-18-fjR"/>
                                             <constraint firstAttribute="trailing" secondItem="3SJ-ba-0RT" secondAttribute="trailing" id="dU7-fG-Hbc"/>
                                             <constraint firstAttribute="bottom" secondItem="JPZ-R1-GJY" secondAttribute="bottom" constant="221" id="eJT-gR-hyG"/>
                                             <constraint firstItem="JPZ-R1-GJY" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="fKn-Td-TK7"/>
-                                            <constraint firstItem="JPZ-R1-GJY" firstAttribute="top" secondItem="3SJ-ba-0RT" secondAttribute="bottom" constant="200" id="wxJ-Mu-I3y"/>
+                                            <constraint firstItem="SZe-hf-sUf" firstAttribute="trailing" secondItem="JPZ-R1-GJY" secondAttribute="trailing" constant="-10" id="i3X-f8-pFy"/>
+                                            <constraint firstItem="JPZ-R1-GJY" firstAttribute="top" secondItem="3SJ-ba-0RT" secondAttribute="bottom" id="wxJ-Mu-I3y"/>
                                             <constraint firstItem="3SJ-ba-0RT" firstAttribute="top" secondItem="d0E-Gr-7b5" secondAttribute="top" id="x6u-4M-vKf"/>
+                                            <constraint firstItem="SZe-hf-sUf" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" constant="10" id="yeU-B5-aGO"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="PhD-lS-loH" appends="YES" id="lCD-OK-T8n"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -130,8 +159,17 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="340" height="800"/>
+                    <connections>
+                        <outlet property="email" destination="SZe-hf-sUf" id="qtj-ST-o5I"/>
+                        <outlet property="scrollView" destination="yqb-0T-teI" id="uD1-xp-ldj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-hI-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PhD-lS-loH">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="WDA-aQ-J5d" id="XXC-fg-dvj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="869" y="1552"/>
         </scene>
@@ -209,4 +247,7 @@
             <point key="canvasLocation" x="625" y="485"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo3" width="1024" height="768"/>
+    </resources>
 </document>
