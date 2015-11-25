@@ -83,7 +83,7 @@
         <!--Photo Comment View Controller-->
         <scene sceneID="upX-B7-cmx">
             <objects>
-                <viewController storyboardIdentifier="PhotoCommentViewController" id="WDA-aQ-J5d" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoCommentViewController" autoresizesArchivedViewToFullSize="NO" id="WDA-aQ-J5d" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ca4-1e-Q5Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Inq-Ye-VOX"/>
@@ -176,6 +176,7 @@
                             <constraint firstItem="yqb-0T-teI" firstAttribute="top" secondItem="ca4-1e-Q5Y" secondAttribute="bottom" constant="-20" id="tAv-64-UUj"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="340" height="800"/>
                     <connections>
