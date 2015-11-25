@@ -51,4 +51,18 @@ public class PhotoCommentViewController: UIViewController {
         scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
     }
 
+    @IBAction func openZoomingController(sender: AnyObject) {
+        if sender.state == UIGestureRecognizerState.Ended {
+            self.performSegueWithIdentifier("zooming", sender: nil)
+        }
+    }
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier {
+            if id == "zooming" {
+            let theDestination = segue.destinationViewController as! PhotoViewController
+            theDestination.photoName = photoName
+            }
+        }
+
+    }
 }

@@ -54,6 +54,7 @@ class PhotoViewController: UIViewController {
             bottom: verticalSpace,
             right: horizontalSpace)
     }
+
 }
 
 // MARK: - UIScrollViewDelegate

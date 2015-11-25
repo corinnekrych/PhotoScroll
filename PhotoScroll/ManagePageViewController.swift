@@ -11,6 +11,7 @@ import UIKit
 class ManagePageViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var pageController: UIPageViewController!
     var photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
+    var currentIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class ManagePageViewController: UIViewController, UIPageViewControllerDataSource
         // make page color transparent
         self.pageController.view.backgroundColor = UIColor.clearColor()
         
-        let startingViewController:PhotoCommentViewController = self.viewPhotoCommentController(0)
+        let startingViewController:PhotoCommentViewController = self.viewPhotoCommentController(currentIndex ?? 0)
         let viewControllers = [startingViewController]
         self.pageController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
         
@@ -72,7 +73,7 @@ class ManagePageViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        return currentIndex ?? 0
     }
 
 }

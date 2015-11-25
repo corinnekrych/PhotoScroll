@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UICollectionViewController {
     private let reuseIdentifier = "PhotoCell"
     private let thumnailSize:CGFloat = 145.0
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 10.0, bottom: 50.0, right: 10.0)
+    private let sectionInsets = UIEdgeInsets(top: 10, left: 10.0, bottom: 50.0, right: 10.0)
     private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
 
     override func viewDidLoad() {
@@ -26,9 +26,10 @@ class ViewController: UICollectionViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? UICollectionViewCell, indexPath = collectionView!.indexPathForCell(cell) {
+            let theDestination = (segue.destinationViewController as! ManagePageViewController)
 
-            let theDestination = (segue.destinationViewController as! PhotoViewController)
-            theDestination.photoName = photos[indexPath.row]
+            theDestination.photos = photos
+            theDestination.currentIndex = indexPath.row
         }
     }
 
