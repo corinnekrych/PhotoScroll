@@ -22,17 +22,14 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  
-  var window: UIWindow?
-    
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
-    let pageControl = UIPageControl.appearance()
-    pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
-    pageControl.currentPageIndicatorTintColor = UIColor.redColor()
-    return true
+extension UIImage {
+  func showThumbnail(thumbnailSize: CGFloat)-> UIImage {
+    UIGraphicsBeginImageContext(CGSize(width: thumbnailSize, height: thumbnailSize))
+    let rect = CGRectMake(0.0, 0.0, thumbnailSize, thumbnailSize)
+    UIGraphicsBeginImageContext(rect.size)
+    self.drawInRect(rect)
+    let thumbnail = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext()
+    return thumbnail
   }
 }
-

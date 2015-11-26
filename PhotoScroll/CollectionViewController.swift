@@ -1,36 +1,39 @@
-//
-//  ViewController.swift
-//  PhotoScroll
-//
-//  Created by Corinne Krych on 21/11/15.
-//  Copyright © 2015 raywenderlich. All rights reserved.
-//
+/*
+* Copyright (c) 2015 Razeware LLC
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*/
 
 import UIKit
 
 class CollectionViewController: UICollectionViewController {
   private let reuseIdentifier = "PhotoCell"
-  private let thumnailSize:CGFloat = 145.0
+  private let thumbnailSize:CGFloat = 145.0
   private let sectionInsets = UIEdgeInsets(top: 10, left: 10.0, bottom: 50.0, right: 10.0)
   private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UICollectionViewCell, indexPath = collectionView!.indexPathForCell(cell) {
-      let theDestination = (segue.destinationViewController as! ManagePageViewController)
-      
-      theDestination.photos = photos
-      theDestination.currentIndex = indexPath.row
+    if let cell = sender as? UICollectionViewCell, indexPath = collectionView?.indexPathForCell(cell), managePageViewController = segue.destinationViewController as? ManagePageViewController {
+      managePageViewController.photos = photos
+      managePageViewController.currentIndex = indexPath.row
     }
   }
-  
 }
 
 // MARK: UICollectionViewDataSource
@@ -47,9 +50,8 @@ extension CollectionViewController {
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCell
     cell.backgroundColor = UIColor.blackColor()
-    
-    let thumbnail = showThumbnail(UIImage(named:photos[indexPath.row])!, thumnailSize: thumnailSize)
-    cell.imageView.image = thumbnail
+    let fullSizedImage = UIImage(named:photos[indexPath.row])
+    cell.imageView.image = fullSizedImage?.showThumbnail(thumbnailSize)
     return cell
   }
 }
@@ -58,21 +60,11 @@ extension CollectionViewController {
 extension CollectionViewController : UICollectionViewDelegateFlowLayout {
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return CGSize(width: thumnailSize, height: thumnailSize)
+    return CGSize(width: thumbnailSize, height: thumbnailSize)
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
     return sectionInsets
   }
   
-}
-
-func showThumbnail(image: UIImage, thumnailSize: CGFloat)-> UIImage {
-  UIGraphicsBeginImageContext(CGSize(width: thumnailSize, height: thumnailSize))
-  let rect = CGRectMake(0.0, 0.0, thumnailSize, thumnailSize)
-  UIGraphicsBeginImageContext(rect.size)
-  image.drawInRect(rect)
-  let thumbnail = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext()
-  return thumbnail
 }
