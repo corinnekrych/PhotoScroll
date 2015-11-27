@@ -103,11 +103,11 @@
                                                 <rect key="frame" x="0.0" y="695" width="340" height="40"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.99607843139999996" green="0.9156355383" blue="0.53531350690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" red="0.2901960784" green="0.6705882353" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Djh-9B-LHT"/>
                                                 </constraints>
-                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -130,19 +130,43 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBB-Li-I8A">
+                                                <rect key="frame" x="0.0" y="352" width="340" height="1"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="6Qp-cl-05d"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="CsM-Ct-Oge">
+                                                <rect key="frame" x="294" y="307" width="32" height="32"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="6j5-uh-Txs"/>
+                                                    <constraint firstAttribute="height" constant="32" id="PVb-f4-jYB"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="JBB-Li-I8A" firstAttribute="top" secondItem="2zK-tx-UrK" secondAttribute="bottom" constant="57" id="7VC-1u-WYp"/>
                                             <constraint firstAttribute="trailing" secondItem="2zK-tx-UrK" secondAttribute="trailing" id="9kk-nV-k7F"/>
+                                            <constraint firstAttribute="trailing" secondItem="JBB-Li-I8A" secondAttribute="trailing" id="CTQ-ym-yht"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="centerX" secondItem="SZe-hf-sUf" secondAttribute="centerX" id="E9l-UW-eTE"/>
+                                            <constraint firstAttribute="trailing" secondItem="CsM-Ct-Oge" secondAttribute="trailing" constant="14" id="G6N-VS-xAo"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Jll-De-zaa"/>
+                                            <constraint firstItem="JBB-Li-I8A" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="MP1-19-Lhw"/>
                                             <constraint firstItem="2zK-tx-UrK" firstAttribute="top" secondItem="1Re-IN-Auo" secondAttribute="bottom" id="MtE-J7-690"/>
                                             <constraint firstItem="2zK-tx-UrK" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Ruz-at-p6Z"/>
                                             <constraint firstAttribute="height" constant="735" id="TDc-bx-PuZ"/>
                                             <constraint firstAttribute="bottom" secondItem="SZe-hf-sUf" secondAttribute="bottom" id="ahb-18-fjR"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="top" secondItem="d0E-Gr-7b5" secondAttribute="top" id="awc-iD-1hw"/>
+                                            <constraint firstItem="CsM-Ct-Oge" firstAttribute="top" secondItem="2zK-tx-UrK" secondAttribute="bottom" constant="12" id="lIv-Vg-ZlI"/>
                                             <constraint firstAttribute="trailing" secondItem="1Re-IN-Auo" secondAttribute="trailing" id="wvm-mV-CoB"/>
                                             <constraint firstItem="SZe-hf-sUf" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="yeU-B5-aGO"/>
                                         </constraints>
@@ -302,6 +326,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat" width="16" height="16"/>
         <image name="photo3" width="1024" height="768"/>
     </resources>
 </document>
