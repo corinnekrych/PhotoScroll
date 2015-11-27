@@ -119,13 +119,27 @@
                                                     <constraint firstAttribute="height" constant="294" id="I7R-6C-1aY" userLabel="height = 300"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zK-tx-UrK">
+                                                <rect key="frame" x="0.0" y="294" width="340" height="1"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Skr-jg-De0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2zK-tx-UrK" secondAttribute="trailing" id="9kk-nV-k7F"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="centerX" secondItem="SZe-hf-sUf" secondAttribute="centerX" id="E9l-UW-eTE"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Jll-De-zaa"/>
+                                            <constraint firstItem="2zK-tx-UrK" firstAttribute="top" secondItem="1Re-IN-Auo" secondAttribute="bottom" id="MtE-J7-690"/>
+                                            <constraint firstItem="2zK-tx-UrK" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Ruz-at-p6Z"/>
                                             <constraint firstAttribute="height" constant="735" id="TDc-bx-PuZ"/>
                                             <constraint firstAttribute="bottom" secondItem="SZe-hf-sUf" secondAttribute="bottom" id="ahb-18-fjR"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="top" secondItem="d0E-Gr-7b5" secondAttribute="top" id="awc-iD-1hw"/>
@@ -139,7 +153,7 @@
                                     </view>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.89694600069999997" green="0.22098291919999999" blue="0.1603457999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="right" secondItem="d0E-Gr-7b5" secondAttribute="right" id="J04-fS-dxT"/>
