@@ -65,10 +65,9 @@ public class PhotoCommentViewController: UIViewController {
   }
   
   @IBAction func openZoomingController(sender: AnyObject) {
-    if sender.state == UIGestureRecognizerState.Ended {
       self.performSegueWithIdentifier("zooming", sender: nil)
-    }
   }
+  
   override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let id = segue.identifier, zoomedPhotoViewController = segue.destinationViewController as? ZoomedPhotoViewController {
       if id == "zooming" {

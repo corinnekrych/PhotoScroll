@@ -10,7 +10,7 @@
             <objects>
                 <collectionViewController id="Dz9-ob-7Jl" customClass="CollectionViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gVo-6Z-tf9">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -22,7 +22,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="buF-rK-ntA" customClass="PhotoCell" customModule="PhotoScroll" customModuleProvider="target">
-                                <rect key="frame" x="70" y="64" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="64" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -70,7 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CA8-E3-oD8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AMZ-ie-l7T">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,14 +111,6 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo3" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-IN-Auo">
-                                                <rect key="frame" x="0.0" y="0.0" width="340" height="294"/>
-                                                <animations/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="294" id="I7R-6C-1aY" userLabel="height = 300"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zK-tx-UrK">
                                                 <rect key="frame" x="0.0" y="294" width="340" height="1"/>
                                                 <animations/>
@@ -149,6 +141,17 @@
                                                     <constraint firstAttribute="height" constant="32" id="PVb-f4-jYB"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo3" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-IN-Auo">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="294"/>
+                                                <animations/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="294" id="I7R-6C-1aY" userLabel="height = 300"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Ict-nD-LTU" appends="YES" id="au6-na-Erh"/>
+                                                </connections>
+                                            </imageView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,8 +174,7 @@
                                             <constraint firstItem="SZe-hf-sUf" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="yeU-B5-aGO"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="PhD-lS-loH" appends="YES" id="lCD-OK-T8n"/>
-                                            <outletCollection property="gestureRecognizers" destination="UKg-AZ-Kwj" appends="YES" id="kp6-Qp-zvv"/>
+                                            <outletCollection property="gestureRecognizers" destination="Qq4-hj-eAG" appends="YES" id="dGK-2l-uQH"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -204,20 +206,20 @@
                         <outlet property="email" destination="SZe-hf-sUf" id="qtj-ST-o5I"/>
                         <outlet property="imageView" destination="1Re-IN-Auo" id="IVS-ES-Dqa"/>
                         <outlet property="scrollView" destination="yqb-0T-teI" id="uD1-xp-ldj"/>
-                        <segue destination="Tou-yP-mjQ" kind="show" identifier="zooming" action="showDetailViewController:sender:" id="wGJ-VE-5AI"/>
+                        <segue destination="Tou-yP-mjQ" kind="showDetail" identifier="zooming" id="z1b-Ib-Xc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-hI-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PhD-lS-loH">
+                <tapGestureRecognizer id="Ict-nD-LTU" userLabel="Tap UIImage Gesture Recognizer">
                     <connections>
-                        <action selector="hideKeyboard:" destination="WDA-aQ-J5d" id="XXC-fg-dvj"/>
+                        <action selector="openZoomingController:" destination="WDA-aQ-J5d" id="oCx-Tt-RZV"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pinchGestureRecognizer id="UKg-AZ-Kwj">
+                <tapGestureRecognizer id="Qq4-hj-eAG" userLabel="Tap Container Gesture Recognizer">
                     <connections>
-                        <action selector="openZoomingController:" destination="WDA-aQ-J5d" id="XvN-Dk-CTs"/>
+                        <action selector="hideKeyboard:" destination="WDA-aQ-J5d" id="u0p-Sa-r4h"/>
                     </connections>
-                </pinchGestureRecognizer>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1878" y="1562"/>
         </scene>
@@ -230,11 +232,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Tte-qg-mzd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dBF-SA-UXb">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-fR-fHB">
-                                <rect key="frame" x="-4" y="0.0" width="348" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ve5-7J-0me">
                                         <rect key="frame" x="0.0" y="20" width="600" height="556"/>
@@ -257,7 +259,7 @@
                                 </connections>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OF2-lq-VSh">
-                                <rect key="frame" x="-4" y="0.0" width="348" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="eaD-xJ-FMc"/>
