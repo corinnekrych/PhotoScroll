@@ -29,24 +29,26 @@ class ZoomedPhotoViewController: UIViewController {
   
   override func viewDidLoad() {
     imageView.image = UIImage(named: photoName)
+    setZoomScale()
   }
   
-  func setZoomParametersForSize(scrollViewSize: CGSize) {
-    let imageSize = imageView.bounds.size    
-    let widthScale = scrollViewSize.width / imageSize.width
-    let heightScale = scrollViewSize.height / imageSize.height
-    let minScale = min(widthScale, heightScale)
-    
-    scrollView.minimumZoomScale = minScale
-    scrollView.maximumZoomScale = 3.0
-    scrollView.zoomScale = minScale
-  }
+
   
   override func viewWillLayoutSubviews() {
-    setZoomParametersForSize(scrollView.bounds.size)
     recenterImage()
   }
-  
+    
+
+    func setZoomScale() {
+        let imageViewSize = imageView.bounds.size
+        let scrollViewSize = scrollView.bounds.size
+        let widthScale = scrollViewSize.width / imageViewSize.width
+        let heightScale = scrollViewSize.height / imageViewSize.height
+        
+        scrollView.minimumZoomScale = min(widthScale, heightScale)
+        scrollView.maximumZoomScale = 3.0
+        scrollView.zoomScale = 1.0
+    }
   func recenterImage() {
     let scrollViewSize = scrollView.bounds.size
     let imageSize = imageView.frame.size
@@ -59,11 +61,8 @@ class ZoomedPhotoViewController: UIViewController {
     let verticalSpace = imageSize.height < scrollViewSize.height ?
       (scrollViewSize.height - tabSize - imageSize.height) / 2 : 0
     
-    scrollView.contentInset = UIEdgeInsets(top: verticalSpace,
-      left: horizontalSpace,
-      bottom: verticalSpace,
-      right: horizontalSpace)
-  }
+    scrollView.contentInset = UIEdgeInsets(top: verticalSpace, left: horizontalSpace, bottom: verticalSpace, right: horizontalSpace)
+    }
   
 }
 
@@ -72,5 +71,9 @@ extension ZoomedPhotoViewController: UIScrollViewDelegate {
   func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
     return imageView
   }
+
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+    recenterImage()
+    }
 }
 
