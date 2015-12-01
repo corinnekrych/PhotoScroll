@@ -29,6 +29,7 @@ class ZoomedPhotoViewController: UIViewController {
   
   override func viewDidLoad() {
     imageView.image = UIImage(named: photoName)
+    view.backgroundColor = UIColor.blackColor()
     scrollView.minimumZoomScale = 1.0
     scrollView.maximumZoomScale = 3.0
     scrollView.zoomScale = 1.0
