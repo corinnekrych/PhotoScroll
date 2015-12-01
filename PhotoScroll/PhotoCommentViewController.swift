@@ -65,14 +65,11 @@ public class PhotoCommentViewController: UIViewController {
   }
   
   @IBAction func openZoomingController(sender: AnyObject) {
-      self.performSegueWithIdentifier("zooming", sender: nil)
-  }
-  
-  override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let id = segue.identifier, zoomedPhotoViewController = segue.destinationViewController as? ZoomedPhotoViewController {
-      if id == "zooming" {
-        zoomedPhotoViewController.photoName = photoName
-      }
+    let zoomedStoryboard = UIStoryboard.init(name: "ZoomedPhotViewController", bundle: NSBundle.mainBundle())
+    let zoomedViewController = zoomedStoryboard.instantiateViewControllerWithIdentifier("ZoomedPhotoViewController") as! ZoomedPhotoViewController
+    zoomedViewController.photoName = photoName
+    presentViewController(zoomedViewController, animated: true) { () -> Void in
     }
   }
+
 }
