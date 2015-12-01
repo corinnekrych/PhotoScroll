@@ -301,13 +301,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="kZg-hQ-eUF"/>
+                                    <constraint firstAttribute="height" constant="64" id="kZg-hQ-eUF">
+                                        <variation key="heightClass=compact" constant="44"/>
+                                    </constraint>
                                 </constraints>
                                 <items>
                                     <navigationItem id="mme-fE-XqS">
                                         <barButtonItem key="leftBarButtonItem" title="✖️" style="done" id="rNl-UI-GQy">
                                             <connections>
-                                                <segue destination="IYL-XP-JUV" kind="show" id="lI8-9P-W2v"/>
+                                                <segue destination="PxE-AS-fAZ" kind="unwind" unwindAction="unwindToThisViewController:" id="Hgx-9R-pOj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -337,6 +339,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSI-tT-12r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PxE-AS-fAZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2447" y="1562"/>
         </scene>

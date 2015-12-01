@@ -29,40 +29,11 @@ class ZoomedPhotoViewController: UIViewController {
   
   override func viewDidLoad() {
     imageView.image = UIImage(named: photoName)
-    setZoomScale()
-  }
-  
-
-  
-  override func viewWillLayoutSubviews() {
-    recenterImage()
+    scrollView.minimumZoomScale = 1.0
+    scrollView.maximumZoomScale = 3.0
+    scrollView.zoomScale = 1.0
   }
     
-
-    func setZoomScale() {
-        let imageViewSize = imageView.bounds.size
-        let scrollViewSize = scrollView.bounds.size
-        let widthScale = scrollViewSize.width / imageViewSize.width
-        let heightScale = scrollViewSize.height / imageViewSize.height
-        
-        scrollView.minimumZoomScale = min(widthScale, heightScale)
-        scrollView.maximumZoomScale = 3.0
-        scrollView.zoomScale = 1.0
-    }
-  func recenterImage() {
-    let scrollViewSize = scrollView.bounds.size
-    let imageSize = imageView.frame.size
-    var tabSize: CGFloat = 0
-    if let navigationController = navigationController {
-      tabSize = CGRectGetHeight(navigationController.navigationBar.frame)
-    }
-    let horizontalSpace = imageSize.width < scrollViewSize.width ?
-      (scrollViewSize.width - imageSize.width) / 2 : 0
-    let verticalSpace = imageSize.height < scrollViewSize.height ?
-      (scrollViewSize.height - tabSize - imageSize.height) / 2 : 0
-    
-    scrollView.contentInset = UIEdgeInsets(top: verticalSpace, left: horizontalSpace, bottom: verticalSpace, right: horizontalSpace)
-    }
   
 }
 
@@ -72,8 +43,5 @@ extension ZoomedPhotoViewController: UIScrollViewDelegate {
     return imageView
   }
 
-    func scrollViewDidZoom(scrollView: UIScrollView) {
-    recenterImage()
-    }
 }
 

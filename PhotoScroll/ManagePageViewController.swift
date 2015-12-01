@@ -51,6 +51,8 @@ class ManagePageViewController: UIViewController, UIPageViewControllerDataSource
     }
     return nil
   }
+    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+    }
 }
 
 //MARK: implementation of UIPageViewControllerDataSource
