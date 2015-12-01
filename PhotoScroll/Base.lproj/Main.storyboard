@@ -137,7 +137,9 @@
                                                 <animations/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="294" id="I7R-6C-1aY" userLabel="height = 300"/>
+                                                    <constraint firstAttribute="height" constant="294" id="I7R-6C-1aY" userLabel="height = 300">
+                                                        <variation key="widthClass=regular" constant="500"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="Ict-nD-LTU" appends="YES" id="au6-na-Erh"/>
@@ -150,44 +152,69 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCB-Bm-vX3">
-                                                <rect key="frame" x="75" y="383" width="190" height="46"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-gK-ktz">
+                                                <rect key="frame" x="50" y="407" width="240" height="58"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYP-WC-gTu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="46"/>
+                                                    <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYE-ik-cMs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="58"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYF-It-bxh">
-                                                        <rect key="frame" x="38" y="0.0" width="38" height="46"/>
+                                                        <state key="normal" title="💛"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="oneHit:" destination="WDA-aQ-J5d" eventType="touchUpInside" id="oPK-GD-CIs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sas-ZQ-16I">
+                                                        <rect key="frame" x="51" y="0.0" width="38" height="58"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-Dj-ie6">
-                                                        <rect key="frame" x="76" y="0.0" width="38" height="46"/>
+                                                        <state key="normal" title="💛"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="twoHit:" destination="WDA-aQ-J5d" eventType="touchUpInside" id="HMU-L5-Gwl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMk-AJ-FYF">
+                                                        <rect key="frame" x="101" y="0.0" width="38" height="58"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7f-LN-pCE">
-                                                        <rect key="frame" x="114" y="0.0" width="38" height="46"/>
+                                                        <state key="normal" title="💛"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="threeHit:" destination="WDA-aQ-J5d" eventType="touchUpInside" id="7VA-nI-6x8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhe-Qg-25B">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="58"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-US-LiA">
-                                                        <rect key="frame" x="152" y="0.0" width="38" height="46"/>
+                                                        <state key="normal" title="💛"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="fourHit:" destination="WDA-aQ-J5d" eventType="touchUpInside" id="yOH-jH-ZJD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-AK-vAA">
+                                                        <rect key="frame" x="202" y="0.0" width="38" height="58"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <state key="normal" title="💛"/>
+                                                        <variation key="widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="fiveHit:" destination="WDA-aQ-J5d" eventType="touchUpInside" id="fbK-WX-GPS"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <animations/>
                                             </stackView>
@@ -205,13 +232,20 @@
                                             <constraint firstItem="JBB-Li-I8A" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="MP1-19-Lhw"/>
                                             <constraint firstItem="2zK-tx-UrK" firstAttribute="top" secondItem="1Re-IN-Auo" secondAttribute="bottom" id="MtE-J7-690"/>
                                             <constraint firstItem="2zK-tx-UrK" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="Ruz-at-p6Z"/>
-                                            <constraint firstAttribute="height" constant="600" id="TDc-bx-PuZ"/>
+                                            <constraint firstAttribute="height" constant="600" id="TDc-bx-PuZ">
+                                                <variation key="widthClass=regular" constant="806"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="oQc-gK-ktz" secondAttribute="trailing" constant="50" id="ZnV-XC-hP0">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstAttribute="bottom" secondItem="SZe-hf-sUf" secondAttribute="bottom" constant="50" id="ahb-18-fjR"/>
                                             <constraint firstItem="1Re-IN-Auo" firstAttribute="top" secondItem="d0E-Gr-7b5" secondAttribute="top" id="awc-iD-1hw"/>
                                             <constraint firstItem="JBB-Li-I8A" firstAttribute="top" secondItem="m6F-4v-iPv" secondAttribute="bottom" constant="8" id="cd9-yd-ptu"/>
-                                            <constraint firstItem="TCB-Bm-vX3" firstAttribute="centerX" secondItem="d0E-Gr-7b5" secondAttribute="centerX" id="d0B-zB-RjI"/>
-                                            <constraint firstItem="TCB-Bm-vX3" firstAttribute="top" secondItem="JBB-Li-I8A" secondAttribute="bottom" constant="30" id="fKp-6R-icj"/>
+                                            <constraint firstItem="oQc-gK-ktz" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" constant="50" id="dtx-wt-02v">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="m6F-4v-iPv" firstAttribute="top" secondItem="2zK-tx-UrK" secondAttribute="bottom" constant="7" id="gPn-0z-Mb2"/>
+                                            <constraint firstItem="SZe-hf-sUf" firstAttribute="top" secondItem="oQc-gK-ktz" secondAttribute="bottom" constant="45" id="jeB-OE-sW1"/>
                                             <constraint firstItem="m6F-4v-iPv" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="r6B-Rj-mnd"/>
                                             <constraint firstAttribute="trailing" secondItem="1Re-IN-Auo" secondAttribute="trailing" id="wvm-mV-CoB"/>
                                             <constraint firstItem="SZe-hf-sUf" firstAttribute="leading" secondItem="d0E-Gr-7b5" secondAttribute="leading" id="yeU-B5-aGO"/>
@@ -247,8 +281,13 @@
                     <size key="freeformSize" width="340" height="800"/>
                     <connections>
                         <outlet property="email" destination="SZe-hf-sUf" id="qtj-ST-o5I"/>
+                        <outlet property="five" destination="BVK-AK-vAA" id="jHk-35-eKD"/>
+                        <outlet property="four" destination="Jhe-Qg-25B" id="AQj-QH-7Kc"/>
                         <outlet property="imageView" destination="1Re-IN-Auo" id="IVS-ES-Dqa"/>
+                        <outlet property="one" destination="YYE-ik-cMs" id="Mga-jU-ejh"/>
                         <outlet property="scrollView" destination="yqb-0T-teI" id="uD1-xp-ldj"/>
+                        <outlet property="three" destination="jMk-AJ-FYF" id="Jnp-95-9Gu"/>
+                        <outlet property="two" destination="Sas-ZQ-16I" id="Ymb-ut-16F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlZ-hI-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
