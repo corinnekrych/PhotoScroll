@@ -25,16 +25,15 @@ import UIKit
 class ZoomedPhotoViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var scrollView: UIScrollView!
-  var photoName: String!
   @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
+  var photoName: String!
   
   override func viewDidLoad() {
     imageView.image = UIImage(named: photoName)
   }
-  
     
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()

@@ -38,7 +38,6 @@ class CollectionViewController: UICollectionViewController {
 
 // MARK: UICollectionViewDataSource
 extension CollectionViewController {
-  
   override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
     return 1
   }
@@ -65,5 +64,4 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
     return sectionInsets
   }
-  
 }

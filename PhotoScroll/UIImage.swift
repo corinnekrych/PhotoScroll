@@ -27,7 +27,7 @@ extension UIImage {
     UIGraphicsBeginImageContext(CGSize(width: thumbnailSize, height: thumbnailSize))
     let rect = CGRectMake(0.0, 0.0, thumbnailSize, thumbnailSize)
     UIGraphicsBeginImageContext(rect.size)
-    self.drawInRect(rect)
+    drawInRect(rect)
     let thumbnail = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext()
     return thumbnail
