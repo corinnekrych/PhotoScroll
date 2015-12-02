@@ -26,16 +26,44 @@ class ZoomedPhotoViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var scrollView: UIScrollView!
   var photoName: String!
+  @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
   
   override func viewDidLoad() {
     imageView.image = UIImage(named: photoName)
-    view.backgroundColor = UIColor.blackColor()
-    scrollView.minimumZoomScale = 1.0
-    scrollView.maximumZoomScale = 3.0
-    scrollView.zoomScale = 1.0
   }
-    
   
+    
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    updateMinZoomScaleForSize(view.bounds.size)
+  }
+  
+  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    updateMinZoomScaleForSize(size)
+    updateConstraintsForSize(size)
+  }
+  
+  private func updateConstraintsForSize(size: CGSize) {
+    let xOffset = max(0, (size.width - imageView.frame.width) / 2)
+    imageViewLeadingConstraint.constant = xOffset
+    imageViewTrailingConstraint.constant = xOffset
+    
+    let yOffset = max(0, (size.height - imageView.frame.height) / 2)
+    imageViewTopConstraint.constant = yOffset
+    imageViewBottomConstraint.constant = yOffset
+    
+    view.layoutIfNeeded()
+  }
+  
+  private func updateMinZoomScaleForSize(size: CGSize) {
+    let scale = size.width / imageView.bounds.width
+    scrollView.minimumZoomScale = scale
+    scrollView.zoomScale = scale
+  }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -43,6 +71,8 @@ extension ZoomedPhotoViewController: UIScrollViewDelegate {
   func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
     return imageView
   }
-
+  func scrollViewDidZoom(scrollView: UIScrollView) {
+    updateConstraintsForSize(view.bounds.size)
+  }
 }
 

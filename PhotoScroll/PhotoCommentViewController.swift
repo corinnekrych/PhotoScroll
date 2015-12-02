@@ -27,7 +27,32 @@ public class PhotoCommentViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var email: UITextField!
+  @IBOutlet weak var one: UIButton!
+  @IBAction func oneHit(sender: AnyObject) {
+    one.alpha = 1.0
+  }
+  @IBOutlet weak var two: UIButton!
+  @IBAction func twoHit(sender: AnyObject) {
+    oneHit(sender)
+    two.alpha = 1.0
+  }
+  @IBOutlet weak var three: UIButton!
+  @IBAction func threeHit(sender: AnyObject) {
+    twoHit(sender)
+    three.alpha = 1.0
+  }
   
+  @IBOutlet weak var four: UIButton!
+  @IBAction func fourHit(sender: AnyObject) {
+    threeHit(sender)
+    four.alpha = 1.0
+  }
+  
+  @IBOutlet weak var five: UIButton!
+  @IBAction func fiveHit(sender: AnyObject) {
+    fourHit(sender)
+    five.alpha = 1.0
+  }
   public var photoName: String!
   public var photoIndex: Int!
   
