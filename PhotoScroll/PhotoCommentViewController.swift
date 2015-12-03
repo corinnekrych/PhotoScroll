@@ -25,42 +25,13 @@ import UIKit
 public class PhotoCommentViewController: UIViewController {  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var email: UITextField!
-  @IBOutlet weak var one: UIButton!
-  @IBOutlet weak var two: UIButton!
-  @IBOutlet weak var three: UIButton!
-  @IBOutlet weak var four: UIButton!
-  @IBOutlet weak var five: UIButton!
-
+  @IBOutlet weak var nameTextField: UITextField!
   public var photoName: String!
   public var photoIndex: Int!
-  
-  @IBAction func oneHit(sender: AnyObject) {
-    one.alpha = 1.0
-  }
-  
-  @IBAction func twoHit(sender: AnyObject) {
-    oneHit(sender)
-    two.alpha = 1.0
-  }
-  
-  @IBAction func threeHit(sender: AnyObject) {
-    twoHit(sender)
-    three.alpha = 1.0
-  }
-  
-  @IBAction func fourHit(sender: AnyObject) {
-    threeHit(sender)
-    four.alpha = 1.0
-  }
-  
-  @IBAction func fiveHit(sender: AnyObject) {
-    fourHit(sender)
-    five.alpha = 1.0
-  }
+
   
   @IBAction func hideKeyboard(sender: AnyObject) {
-    email.endEditing(true)
+    nameTextField.endEditing(true)
   }
   
   override public func viewDidLoad() {

@@ -49,7 +49,7 @@ extension CollectionViewController {
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCell
     let fullSizedImage = UIImage(named:photos[indexPath.row])
-    cell.imageView.image = fullSizedImage?.showThumbnail(thumbnailSize)
+    cell.imageView.image = fullSizedImage?.thumbnailOfSize(thumbnailSize)
     return cell
   }
 }

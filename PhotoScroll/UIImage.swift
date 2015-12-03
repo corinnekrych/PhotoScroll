@@ -23,9 +23,9 @@
 import UIKit
 
 extension UIImage {
-  func showThumbnail(thumbnailSize: CGFloat)-> UIImage {
-    UIGraphicsBeginImageContext(CGSize(width: thumbnailSize, height: thumbnailSize))
-    let rect = CGRectMake(0.0, 0.0, thumbnailSize, thumbnailSize)
+  func thumbnailOfSize(size: CGFloat) -> UIImage {
+    UIGraphicsBeginImageContext(CGSize(width: size, height: size))
+    let rect = CGRectMake(0.0, 0.0, size, size)
     UIGraphicsBeginImageContext(rect.size)
     drawInRect(rect)
     let thumbnail = UIGraphicsGetImageFromCurrentImageContext();
