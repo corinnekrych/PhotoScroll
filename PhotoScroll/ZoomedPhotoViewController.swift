@@ -24,7 +24,6 @@ import UIKit
 
 class ZoomedPhotoViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
-  @IBOutlet weak var scrollView: UIScrollView!
   var photoName: String!
   
   override func viewDidLoad() {
