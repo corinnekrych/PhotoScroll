@@ -26,12 +26,11 @@ class CollectionViewController: UICollectionViewController {
   private let reuseIdentifier = "PhotoCell"
   private let thumbnailSize:CGFloat = 70.0
   private let sectionInsets = UIEdgeInsets(top: 10, left: 5.0, bottom: 10.0, right: 5.0)
-  private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5", "photo1", "photo2", "photo3", "photo4", "photo5"]
+  private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UICollectionViewCell, indexPath = collectionView?.indexPathForCell(cell), managePageViewController = segue.destinationViewController as? ManagePageViewController {
-      managePageViewController.photos = photos
-      managePageViewController.currentIndex = indexPath.row
+    if let cell = sender as? UICollectionViewCell, indexPath = collectionView?.indexPathForCell(cell), zoomedPhotoViewController = segue.destinationViewController as? ZoomedPhotoViewController {
+      zoomedPhotoViewController.photoName = "photo\(indexPath.row + 1)"
     }
   }
 }
