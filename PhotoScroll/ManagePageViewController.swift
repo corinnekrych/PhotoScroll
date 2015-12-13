@@ -22,7 +22,7 @@
 import UIKit
 
 class ManagePageViewController: UIViewController, UIPageViewControllerDataSource {
-  @IBOutlet weak var pageController: UIPageViewController!
+  var pageController: UIPageViewController!
   var photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
   var currentIndex: Int!
   

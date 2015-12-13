@@ -28,7 +28,6 @@ public class PhotoCommentViewController: UIViewController {
   @IBOutlet weak var nameTextField: UITextField!
   public var photoName: String!
   public var photoIndex: Int!
-
   
   @IBAction func hideKeyboard(sender: AnyObject) {
     nameTextField.endEditing(true)
@@ -75,3 +74,4 @@ public class PhotoCommentViewController: UIViewController {
     }
   }
 }
+

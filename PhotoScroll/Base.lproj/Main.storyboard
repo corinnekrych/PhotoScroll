@@ -45,7 +45,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="1Xv-RL-hti" id="2ul-H5-n5T"/>
-                                    <segue destination="Tou-yP-mjQ" kind="show" id="Wlw-9H-VhR"/>
+                                    <segue destination="LNv-ts-pM9" kind="show" id="Zj2-U0-v0M"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -60,6 +60,115 @@
             </objects>
             <point key="canvasLocation" x="1437" y="485"/>
         </scene>
+        <!--Photo Comment View Controller-->
+        <scene sceneID="lZG-7I-FP3">
+            <objects>
+                <viewController storyboardIdentifier="PhotoCommentViewController" automaticallyAdjustsScrollViewInsets="NO" id="NaZ-Kf-pQj" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TZv-Ge-ICu"/>
+                        <viewControllerLayoutGuide type="bottom" id="HHk-wC-rmb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tla-LH-yNB">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHP-Hf-3fM">
+                                <rect key="frame" x="0.0" y="20" width="340" height="780"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFW-ep-tyU" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="IQJ-ma-lxt">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="289"/>
+                                                <animations/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="289" id="DK6-EX-1Wu"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="jGy-ae-Agm" appends="YES" id="qGG-X4-fZV"/>
+                                                </connections>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="cef-gt-v7p">
+                                                <rect key="frame" x="0.0" y="339.5" width="340" height="40"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.99607843139999996" green="0.9156355383" blue="0.53531350690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="X5J-YT-rXk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="23"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whit name fits me best?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-Z5-rih">
+                                                <rect key="frame" x="0.0" y="289" width="340" height="20.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="IQJ-ma-lxt" secondAttribute="trailing" id="9tc-OX-vdm"/>
+                                            <constraint firstAttribute="height" constant="800" id="AGI-3E-voT"/>
+                                            <constraint firstItem="4ee-Z5-rih" firstAttribute="top" secondItem="IQJ-ma-lxt" secondAttribute="bottom" id="IqS-7g-BGZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cef-gt-v7p" secondAttribute="trailing" id="W8O-ZT-6qQ"/>
+                                            <constraint firstItem="IQJ-ma-lxt" firstAttribute="top" secondItem="PFW-ep-tyU" secondAttribute="top" id="WO9-cY-AtH"/>
+                                            <constraint firstItem="4ee-Z5-rih" firstAttribute="leading" secondItem="PFW-ep-tyU" secondAttribute="leading" id="ZCr-Q0-Yuc"/>
+                                            <constraint firstAttribute="trailing" secondItem="4ee-Z5-rih" secondAttribute="trailing" id="dtu-pY-TGo"/>
+                                            <constraint firstItem="cef-gt-v7p" firstAttribute="top" secondItem="4ee-Z5-rih" secondAttribute="bottom" constant="30" id="mhY-LG-d6L"/>
+                                            <constraint firstItem="IQJ-ma-lxt" firstAttribute="leading" secondItem="PFW-ep-tyU" secondAttribute="leading" id="sgZ-qO-xN2"/>
+                                            <constraint firstItem="cef-gt-v7p" firstAttribute="leading" secondItem="PFW-ep-tyU" secondAttribute="leading" id="vJd-MC-qJ9"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bnW-QG-I1B" appends="YES" id="pcQ-0X-eZw"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="PFW-ep-tyU" firstAttribute="top" secondItem="lHP-Hf-3fM" secondAttribute="top" id="Ko5-rp-04O"/>
+                                    <constraint firstAttribute="trailing" secondItem="PFW-ep-tyU" secondAttribute="trailing" id="WoU-5o-3w5"/>
+                                    <constraint firstItem="PFW-ep-tyU" firstAttribute="leading" secondItem="lHP-Hf-3fM" secondAttribute="leading" id="vKo-N8-YGf"/>
+                                    <constraint firstAttribute="bottom" secondItem="PFW-ep-tyU" secondAttribute="bottom" id="vYJ-SO-ndo"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lHP-Hf-3fM" secondAttribute="trailing" id="AIo-HL-49D"/>
+                            <constraint firstItem="lHP-Hf-3fM" firstAttribute="bottom" secondItem="HHk-wC-rmb" secondAttribute="top" id="Gt2-jz-Xkg"/>
+                            <constraint firstItem="lHP-Hf-3fM" firstAttribute="leading" secondItem="tla-LH-yNB" secondAttribute="leading" id="TD2-Na-uYS"/>
+                            <constraint firstItem="PFW-ep-tyU" firstAttribute="width" secondItem="tla-LH-yNB" secondAttribute="width" id="Uq5-5u-4B2"/>
+                            <constraint firstItem="lHP-Hf-3fM" firstAttribute="top" secondItem="TZv-Ge-ICu" secondAttribute="bottom" id="qTa-f8-4rg"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="340" height="800"/>
+                    <connections>
+                        <outlet property="imageView" destination="IQJ-ma-lxt" id="QQf-nh-eJj"/>
+                        <outlet property="nameTextField" destination="cef-gt-v7p" id="9qS-1K-hhl"/>
+                        <outlet property="scrollView" destination="lHP-Hf-3fM" id="A0f-DN-GZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtP-rm-w0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jGy-ae-Agm" userLabel="Tap Gesture Zoom Recognizer">
+                    <connections>
+                        <action selector="openZoomingController:" destination="NaZ-Kf-pQj" id="XtN-VE-kRh"/>
+                        <segue destination="Tou-yP-mjQ" kind="show" identifier="zooming" id="BVq-Lc-5sg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bnW-QG-I1B">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="NaZ-Kf-pQj" id="ggx-51-oR3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1817" y="1222"/>
+        </scene>
         <!--Zoomed Photo View Controller-->
         <scene sceneID="BWF-Mm-sV7">
             <objects>
@@ -73,7 +182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-mh-Jb1">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="Ve5-7J-0me">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -132,6 +241,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf2-di-D1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="747" y="485"/>
+        </scene>
+        <!--Manage Page View Controller-->
+        <scene sceneID="2Pb-KO-hvQ">
+            <objects>
+                <viewController id="LNv-ts-pM9" customClass="ManagePageViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qR-P1-l06"/>
+                        <viewControllerLayoutGuide type="bottom" id="u2X-8G-AOe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZC-TD-vho" userLabel="View" customClass="Mana">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZv-nm-PqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413" y="1184"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="fdD-Wk-EQh">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="6" navigationOrientation="horizontal" spineLocation="none" id="8TW-tb-i6c" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2b-Og-cKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="1184"/>
         </scene>
     </scenes>
     <resources>

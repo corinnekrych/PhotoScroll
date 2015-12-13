@@ -29,8 +29,11 @@ class CollectionViewController: UICollectionViewController {
   private let photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let cell = sender as? UICollectionViewCell, indexPath = collectionView?.indexPathForCell(cell), zoomedPhotoViewController = segue.destinationViewController as? ZoomedPhotoViewController {
-      zoomedPhotoViewController.photoName = "photo\(indexPath.row + 1)"
+    if let cell = sender as? UICollectionViewCell,
+      indexPath = collectionView?.indexPathForCell(cell),
+      managePageViewController = segue.destinationViewController as? ManagePageViewController {
+        managePageViewController.photos = photos
+        managePageViewController.currentIndex = indexPath.row
     }
   }
 }
