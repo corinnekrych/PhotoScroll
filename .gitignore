@@ -25,20 +25,3 @@ Pods/
 build/*
 # Exclude the /dist directory
 dist/
-
-# Exclude fhconfig.plist files in demos for local development.
-demos/**/fhconfig.plist
-
-# Exclude Github releases dirs
-Releases-*/*
-
-# Exclude the output of the 'pod package' directory when build.
-# The output is of the form 'FH-{VERSION}''
-FH-*/
-!fh-ios-sdk/
-**/DerivedData/*
-templates/FHStarterProject/FH.framework/*
-
-# code coverage
-fh-ios-sdk-Prefix.gcda
-fh-ios-sdk-Prefix.gcno
